@@ -414,7 +414,8 @@ int main()		//主程式
 		check3 = rule(enter);	 
 	}
 	
-	
+	printf("\n");
+	//test by alco99
 
 	
 	
