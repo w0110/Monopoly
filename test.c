@@ -418,7 +418,7 @@ int main()		//主程式
 	//test by alco99
 	
 	printf("!");	// test by Lai-14
-
+	printf("@");	//test by HsiangY
 	
 	
 	if(enter == 0 || check2 == 0 || check3 == 0)	//當在初始畫面輸入0或在成員名單頁輸入0或在規則頁輸入0 離開遊戲 
