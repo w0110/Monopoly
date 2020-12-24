@@ -416,6 +416,8 @@ int main()		//主程式
 	
 	printf("\n");
 	//test by alco99
+	
+	printf("!");	// test by Lai-14
 
 	
 	
