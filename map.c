@@ -1,40 +1,40 @@
-void map(char player1[25], char player2[25], char player3[25], char player4[25], int level[25], int land_value[25], int pay[25])
+void map(char player1[25], char player2[25], char player3[25], char player4[25], int land_value[25], int level[25], int pay[25])
 {
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 	printf("■          ■  水  星  ■  金  星  ■          ■  火  星  ■  木  星  ■  土  星  ■          ■\n");
 	printf("■          ■地價:%05d■地價:%05d■          ■地價:%05d■地價:%05d■地價:%05d■          ■\n", land_value[1], land_value[2], land_value[4], land_value[5], land_value[6]);
-	printf("■  起  點  ■等級:L%02d  ■等級:L%02d  ■  機  會  ■等級:L%02d  ■等級:L%02d  ■等級:L%02d  ■          ■\n", level[1], level[2], level[4], level[5], level[6]);
+	printf("■  起  點  ■等級:L%02d  ■等級:L%02d  ■  機  會  ■等級:L%02d  ■等級:L%02d  ■等級:L%02d  ■ 小行星帶 ■\n", level[1], level[2], level[4], level[5], level[6]);
 	printf("■   →→   ■過路費:%03d■過路費:%03d■          ■過路費:%03d■過路費:%03d■過路費:%03d■          ■\n", pay[1], pay[2], pay[4], pay[5], pay[6]);
 	printf("■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■          ■\n", player1[0], player2[0], player3[0], player4[0], player1[1], player2[1], player3[1], player4[1], player1[2], player2[2], player3[2], player4[2], player1[3], player2[3], player3[3], player4[3], player1[4], player2[4], player3[4], player4[4], player1[5], player2[5], player3[5], player4[5], player1[6], player2[6], player3[6], player4[6], player1[7], player2[7], player3[7], player4[7]);
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-	printf("■          ■                                                                      ■  海王星  ■\n");
+	printf("■  地  球  ■                                                                      ■  天王星  ■\n");
 	printf("■地價:%05d■                                                                      ■地價:%05d■\n", land_value[23], land_value[8]);
 	printf("■等級:L%02d  ■     press any botton to start(except 0)                              ■等級:L%02d  ■\n", level[23], level[8]);	
 	printf("■過路費:%03d■                                                                      ■過路費:%03d■\n", pay[23], pay[8]);	
-	printf("■ %c %c %c %c  ■     ★玩家一:                                                        ■ %c        ■\n", player1[23], player2[23], player3[23], player4[23], player1[8], player2[8], player3[8], player4[8]);	
+	printf("■ %c %c %c %c  ■     @ 玩家一:                                                        ■ %c        ■\n", player1[23], player2[23], player3[23], player4[23], player1[8], player2[8], player3[8], player4[8]);	
 	printf("■■■■■■■                                                                      ■■■■■■■\n");
-	printf("■          ■     ⊕玩家二:                                                        ■          ■\n");	
+	printf("■  神秘星  ■     # 玩家二:                                                        ■          ■\n");	
 	printf("■地價:%05d■                                                                      ■          ■\n", land_value[22]);	
-	printf("■等級:L%02d  ■     ◆玩家三:                                                        ■  命  運  ■\n", 1);	
+	printf("■等級:L%02d  ■     & 玩家三:                                                        ■  命  運  ■\n", level[22]);	
 	printf("■過路費:%03d■                                                                      ■          ■\n", pay[22]);
-	printf("■ %c %c %c %c  ■     ▲玩家四:                                                        ■  %c       ■\n", player1[22], player2[22], player3[22], player4[22], player1[9], player2[9], player3[9], player4[9]);	
+	printf("■ %c %c %c %c  ■     $ 玩家四:                                                        ■  %c       ■\n", player1[22], player2[22], player3[22], player4[22], player1[9], player2[9], player3[9], player4[9]);	
 	printf("■■■■■■■                                                                      ■■■■■■■\n");
-	printf("■          ■                                                                      ■  北極星  ■\n");	
+	printf("■          ■                                                                      ■  海王星  ■\n");	
 	printf("■          ■                                                                      ■地價:%05d■\n", land_value[10]);	
-	printf("■  命  運  ■                                                                      ■等級:L%02d  ■\n", 1);	
+	printf("■  命  運  ■                                                                      ■等級:L%02d  ■\n", level[10]);	
 	printf("■          ■                                                                      ■過路費:%03d■\n", pay[10]);
 	printf("■ %c %c %c %c  ■                                                                      ■ %c        ■\n", player1[21], player2[21], player3[21], player4[21], player1[10], player2[10], player3[10], player4[10]);
 	printf("■■■■■■■                                                                      ■■■■■■■\n");
-	printf("■          ■                                                                      ■  天狼星  ■\n");
+	printf("■  旺旺星  ■                                                                      ■  駭客星  ■\n");
 	printf("■地價:%05d■                                                                      ■地價:%05d■\n", land_value[20], land_value[11]);
-	printf("■等級:L%02d  ■                                                                      ■等級:L%02d  ■\n", 1, 1);
+	printf("■等級:L%02d  ■                                                                      ■等級:L%02d  ■\n", level[20], level[11]);
 	printf("■過路費:%03d■                                                                      ■過路費:%03d■\n", pay[20], pay[11]);
 	printf("■ %c %c %c %c  ■                                                                      ■ %c        ■\n", player1[20], player2[20], player3[20], player4[20], player1[11], player2[11], player3[11], player4[11]);
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
-	printf("■          ■          ■          ■          ■          ■  冥王星  ■  月  球  ■          ■\n");
-	printf("■地價:%05d■地價:%05d■地價:%05d■          ■地價:%05d■地價:%05d■地價:%05d■          ■\n", land_value[19], land_value[18], land_value[17], land_value[16], land_value[14], land_value[13], land_value[12]);
-	printf("■等級:L%02d  ■等級:L%02d  ■等級:L%02d  ■  機  會  ■等級:L%02d  ■等級:L%02d  ■          ■  監  獄  ■\n", 1, 1, 1, 1, 1, 1);
-	printf("■過路費:%03d■過路費:%03d■過路費:%03d■          ■過路費:%03d■過路費:%03d■過路費:%03d■          ■\n", pay[19], pay[18], pay[17], pay[16], pay[14], pay[13]);
+	printf("■          ■  逢甲星  ■  美食星  ■  方塊星  ■          ■  植物星  ■  月  球  ■          ■\n");
+	printf("■          ■地價:%05d■地價:%05d■地價:%05d■          ■地價:%05d■地價:%05d■          ■\n", land_value[18], land_value[17], land_value[16], land_value[14], land_value[13]);
+	printf("■ 太空墳場 ■等級:L%02d  ■等級:L%02d  ■等級:L%02d  ■  機  會  ■等級:L%02d  ■等級:L%02d  ■  監  獄  ■\n", level[18], level[17], level[16], level[14], level[13]);
+	printf("■          ■過路費:%03d■過路費:%03d■過路費:%03d■          ■過路費:%03d■過路費:%03d■          ■\n", pay[18], pay[17], pay[16], pay[14], pay[13]);
 	printf("■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■\n", player1[19], player2[19], player3[19], player4[19], player1[18], player2[18], player3[18], player4[18], player1[17], player2[17], player3[17], player4[17], player1[16], player2[16], player3[16], player4[16], player1[15], player2[15], player3[15], player4[15], player1[14], player2[14], player3[14], player4[14], player1[13], player2[13], player3[13], player4[13], player1[12], player2[12], player3[12], player4[12]);
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");	
 }
