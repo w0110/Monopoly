@@ -1,0 +1,63 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <ctype.h> 
+#include <string.h> 
+#include <math.h> 
+
+struct map_initialise{
+	char name[6]; //地名 
+	int own;  //有沒有人買 
+	int owner;  //地主代號 
+	int level;  //等級 
+	int tolls;  //過路費 
+	int price;  //價錢 
+	int exp;  // 升級價錢 
+};
+
+
+
+struct Player{
+	int money;  
+	int realty;   //
+	int move;  //可不可以移動 
+	int location;  //現在位置 
+};
+
+struct Player initialise(struct Player){//初始化 
+	
+}
+
+int main(){
+	struct Player player[4];
+	initialise();//初始化
+	struct map_initialise map[24]={
+		
+	};
+	 
+	//印規則 
+	int i=0,round=0,leave;
+	char respond;
+	while(){
+		round++;
+		//印地圖
+		//印出現在玩家
+		printf("現在玩家：PLAYER%d\n",i+1); 
+		//骰子() 
+		//移動()
+		//換人 
+		i++;
+		if(i==n){  //n是現在玩家人數 
+			i=0;
+		}
+		//回合數太多，要不要離開 
+		if(round%20==0){
+			printf("已經%d回合了，是否繼續(Y/y for leave)？\n",round);
+			scanf("%c",&respond);
+			if(isalph(respond) && (respond=='Y' || respond=='y')){
+				//計算贏家 
+				break;
+			}
+		}
+	}
+	return 0;
+}
