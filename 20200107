@@ -400,7 +400,7 @@ int main(){
 		//玩家移動 
 		player[i].location = player[i].location+ dice_num;
 		//超過起點
-		if(player[i].location > 24){
+		if(player[i].location >= 24){
 			player[i].location = player[i].location-24;
 			printf("\n經過(回到)起點\n\n"); //經過起點獲得1000 
 			player[i].money = player[i].money + 1000;
