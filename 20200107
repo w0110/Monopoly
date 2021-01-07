@@ -168,7 +168,7 @@ int dice()
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	
 }
-map[].owner,
+
 //地圖 
 void map_print(struct map_initialise map[], struct player_initialise player[])
 {
