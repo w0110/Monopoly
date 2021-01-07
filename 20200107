@@ -354,11 +354,9 @@ int main(){
 	map_print(map,player);
 	while(1){
 		
-		if(player[i].bankrupt){
+		if(i!=4 && player[i].bankrupt){
 			i++;
-			if(i!=4){
-				continue;
-			}
+			continue;
 		}
 		int bankruptSituation = 0;
 		for(m=0; m<4; m++){
