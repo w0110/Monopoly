@@ -285,13 +285,13 @@ struct player_initialise fate(struct player_initialise player[],int i){
 int countWinner(struct map_initialise map[], struct player_initialise player[]){
 	int k;
 	int l,max,N;
-	int sum[4];
+	int sum[4]={0};
 	for(k=0;k<4;k++){
 		if(player[k].bankrupt){
 			sum[k]=0;
 			continue;
 		}
-		sum=0;
+		
 		for(l=0;l<24;l++){
 			if(map[l].owner==player[k].realty){
 				sum[k] = sum[k]+map[l].price;
