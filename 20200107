@@ -34,6 +34,7 @@ int countWinner(struct map_initialise map[], struct player_initialise player[],i
 //骰子
 int dice()	 
 {
+	printf("請骰骰子\n");
 	system("pause");
 	srand(time(NULL)); //產生亂數，參數以目前的時間傳入
 	int die = 1 + rand() % 6;//有六個數，從一開始(1~6)
@@ -224,18 +225,17 @@ struct player_initialise chance(struct player_initialise player[],int i){
 	num = rand() % 3 + 1;	//編號 (1-3)
 	switch(num){
 		case 1:
-			printf("內容: 骰到 3 以上的的數字獲得 2000 元\n");
-			system("pause");
+			printf("\n內容: 骰到 3 以上的的數字獲得 2000 元\n");
 			if(dice() >= 3){
 				player[i].money = player[i].money + 2000;
 			}
 			break;
 		case 2:
-			printf("內容: 支付太空船燃料費用 1000 元\n");
+			printf("\n內容: 支付太空船燃料費用 1000 元\n");
 			player[i].money = player[i].money - 1000;
 			break;
 		case 3:
-			printf("內容: 投資股票獲利，獲得 1000 元\n");
+			printf("\n內容: 投資股票獲利，獲得 1000 元\n");
 			player[i].money = player[i].money + 1000;
 			break;		
 	}
@@ -258,15 +258,15 @@ struct player_initialise fate(struct player_initialise player[],int i){
 	num = rand() % 3 + 1;	//編號 (1-3)
 	switch(num){
 		case 1:
-			printf("內容: 遭到外星人攻擊，損失 2000 元\n");
+			printf("\n內容: 遭到外星人攻擊，損失 2000 元\n");
 			player[i].money = player[i].money - 2000;
 			break;
 		case 2:
-			printf("內容: 半路上意外撿到 1000 元\n");
+			printf("\n內容: 半路上意外撿到 1000 元\n");
 			player[i].money = player[i].money + 1000;
 			break;
 		case 3:
-			printf("內容: 退回起點\n");
+			printf("\n內容: 退回起點\n");
 			player[i].location = 0;
 			for(m=0; m<24; m++){
 				if(player[i].printOnMap[m] != ' '){
@@ -389,7 +389,10 @@ int main(){
 				continue;  //離開 
 			}
 			else{
+				
 				player[i].move=0;  //恢復行動並繼續 
+				i++;  //換人 
+				continue;  //離開
 			}
 		
 		}
@@ -424,6 +427,7 @@ int main(){
 			case 15:
 				//機會
 				chance(player,i);
+				printf("\n");
 				map_print(map,player);
 				printf("\n");
 				break;
@@ -431,6 +435,7 @@ int main(){
 			case 21: 
 				//命運
 				fate(player,i);
+				printf("\n");
 				map_print(map,player);
 				printf("\n");
 				break;
