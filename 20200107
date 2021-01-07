@@ -17,7 +17,7 @@ struct map_initialise{
 
 struct player_initialise{
 	int money;  //錢
-	int realty;   //玩家代號
+	int realty;   //玩家代號  
 	int move;  //可不可以移動 
 	int location;  //現在位置 
 	int bankrupt; //破產狀態
@@ -175,7 +175,7 @@ void map_print(struct map_initialise map[], struct player_initialise player[])
 	printf("■          ■地價:%05d■地價:%05d■          ■地價:%05d■地價:%05d■地價:%05d■          ■\n", map[1].price, map[2].price, map[4].price, map[5].price, map[6].price);
 	printf("■  起  點  ■等級:L%02d  ■等級:L%02d  ■  機  會  ■等級:L%02d  ■等級:L%02d  ■等級:L%02d  ■ 小行星帶 ■\n", map[1].level, map[2].level, map[4].level, map[5].level, map[6].level);
 	printf("■   →→   ■過路費:%03d■過路費:%03d■          ■過路費:%03d■過路費:%03d■過路費:%03d■          ■\n", map[1].tolls, map[2].tolls, map[4].tolls, map[5].tolls, map[6].tolls);
-	printf("■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■\n", player[0].printOnMap[0], player[1].printOnMap[0], player[2].printOnMap[0], player[3].printOnMap[0], player[0].printOnMap[1], player[1].printOnMap[1], player[2].printOnMap[1], player[3].printOnMap[1], player[0].printOnMap[2], player[1].printOnMap[2], player[2].printOnMap[2], player[3].printOnMap[2], player[0].printOnMap[3], player[1].printOnMap[3], player[2].printOnMap[3], player[3].printOnMap[3], player[0].printOnMap[4], player[1].printOnMap[4], player[2].printOnMap[4], player[3].printOnMap[4], player[0].printOnMap[5], player[1].printOnMap[5], player[2].printOnMap[5], player[3].printOnMap[5], player[0].printOnMap[6], player[1].printOnMap[6], player[2].printOnMap[6], player.printOnMap[3][6], player[0].printOnMap[7], player[1].printOnMap[7], player[2].printOnMap[7], player[3].printOnMap[7]);
+	printf("■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■ %c %c %c %c  ■\n", player[0].printOnMap[0], player[1].printOnMap[0], player[2].printOnMap[0], player[3].printOnMap[0], player[0].printOnMap[1], player[1].printOnMap[1], player[2].printOnMap[1], player[3].printOnMap[1], player[0].printOnMap[2], player[1].printOnMap[2], player[2].printOnMap[2], player[3].printOnMap[2], player[0].printOnMap[3], player[1].printOnMap[3], player[2].printOnMap[3], player[3].printOnMap[3], player[0].printOnMap[4], player[1].printOnMap[4], player[2].printOnMap[4], player[3].printOnMap[4], player[0].printOnMap[5], player[1].printOnMap[5], player[2].printOnMap[5], player[3].printOnMap[5], player[0].printOnMap[6], player[1].printOnMap[6], player[2].printOnMap[6], player[3].printOnMap[6], player[0].printOnMap[7], player[1].printOnMap[7], player[2].printOnMap[7], player[3].printOnMap[7]);
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 	printf("■  地  球  ■                                                                      ■  天王星  ■\n");
 	printf("■地價:%05d■                                                                      ■地價:%05d■\n", map[23].price, map[8].price);
@@ -198,7 +198,7 @@ void map_print(struct map_initialise map[], struct player_initialise player[])
 	printf("■  旺旺星  ■                                 →Restart the game please enter 2    ■  駭客星  ■\n");
 	printf("■地價:%05d■                                                                      ■地價:%05d■\n", map[20].price, map[11].price);
 	printf("■等級:L%02d  ■                                 →Want to leave please enter 0       ■等級:L%02d  ■\n", map[20].level, map[11].level);
-	printf("■過路費:%03d■                                                                      ■過路費:%03d■\n", map[20].tolls[20], map[11].tolls);
+	printf("■過路費:%03d■                                                                      ■過路費:%03d■\n", map[20].tolls, map[11].tolls);
 	printf("■ %c %c %c %c  ■                                                                      ■ %c %c %c %c  ■\n", player[0].printOnMap[20], player[1].printOnMap[20], player[2].printOnMap[20], player[3].printOnMap[20], player[0].printOnMap[11], player[1].printOnMap[11], player[2].printOnMap[11], player[3].printOnMap[11]);
 	printf("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■\n");
 	printf("■          ■  逢甲星  ■  美食星  ■  方塊星  ■          ■  植物星  ■  月  球  ■          ■\n");
@@ -288,10 +288,10 @@ int countWinner(struct map_initialise map[], struct player_initialise player[],i
 //主程式
 int main(){
 	struct player_initialise player[4]={
-		{10000,1,0,0,0,"@                       "} ,
-		{10000,2,0,0,0,"#                       "} ,
-		{10000,3,0,0,0,"&                       "} ,
-		{10000,4,0,0,0,"$                       "} ,
+		{10000,1,0,0,0,"@                       ", 0} ,
+		{10000,2,0,0,0,"#                       ", 0} ,
+		{10000,3,0,0,0,"&                       ", 0} ,
+		{10000,4,0,0,0,"$                       ", 0}
 	};
 	
 	struct map_initialise map[24]={
@@ -388,12 +388,12 @@ int main(){
 			player[i].money = player[i].money + 1000;
 		}
 		for(m=0;m<24;m++){
-			if(player[i].printfMap[m]!=' '){
-				symbol=player[i].printfMap[m];
-				player[i].printfMap[m]=' ';
+			if(player[i].printOnMap[m]!=' '){
+				symbol=player[i].printOnMap[m];
+				player[i].printOnMap[m]=' ';
 			}
 		}
-		player[i].printfMap[player[i].location]=symbol;
+		player[i].printOnMap[player[i].location]=symbol;
 		//判斷 
 		switch(player[i].location){
 			case 0://起點
