@@ -282,18 +282,33 @@ struct player_initialise fate(struct player_initialise player[],int i){
 	return 	player[i];
 }
 
-int countWinner(struct map_initialise map[], struct player_initialise player[],int k){
-	if(player[k].bankrupt){
-		return 0;
+int countWinner(struct map_initialise map[], struct player_initialise player[]){
+	int k;
+	int l,max,N;
+	int sum[4];
+	for(k=0;k<4;k++){
+		if(player[k].bankrupt){
+			sum[k]=0;
+			continue;
+		}
+		sum=0;
+		for(l=0;l<24;l++){
+			if(map[l].owner==player[k].realty){
+				sum[k] = sum[k]+map[l].price;
+			}
+		}
+		sum[k] = sum[k]+player[k].money;
+		
 	}
-	int l,sum=0;
-	for(l=0;l<24;l++){
-		if(map[l].owner==player[k].realty){
-			sum = sum+map[l].price;
+	max = sum[0];
+	N=0;
+	for(k=1;k<4;k++){
+		if(sum[k]>max){
+			max = sum[k];
+			N = k;
 		}
 	}
-	sum = sum+player[k].money;
-	return sum;
+	return N;
 }
 
 //主程式
@@ -338,17 +353,22 @@ int main(){
 	char respond,ans,symbol,place;
 	map_print(map,player);
 	while(1){
-	
+		
 		if(player[i].bankrupt){
 			i++;
-			continue;
+			if(i!=4){
+				continue;
+			}
 		}
 		int bankruptSituation = 0;
 		for(m=0; m<4; m++){
 			bankruptSituation = bankruptSituation+player[m].bankrupt;
 		}
 		if(bankruptSituation==3){
-			////計算贏家
+			//計算贏家
+			m = countWinner(map,player);
+			printf("PLAYER %d WIN!\n",m+1);
+			break;
 		}
 		if(i==4){
 			printf("是否繼續(Y/y for leave)？");
@@ -357,24 +377,8 @@ int main(){
 			printf("\n");
 			if(isalpha(respond) && (respond=='Y' || respond=='y')){
 				//計算贏家
-				player[0].total = countWinner(map,player,0);
-				player[1].total = countWinner(map,player,1);
-				player[2].total = countWinner(map,player,2);
-				player[3].total = countWinner(map,player,3);
-				int j,k;
-				for(j=0;j<3;j++){
-					for(k=0;k<3-j;k++){
-						if(player[k].total<player[k+1].total){
-							player[j].total=0;
-							break;
-						}
-					}	
-				}
-				for(j=0;j<4;j++){
-					if(player[j].total!=0){
-						printf("PLAYER%d WIN!\n",j+1);
-					}
-				}
+				m = countWinner(map,player);
+				printf("PLAYER %d WIN!\n",m+1);
 				break;
 			}
 			else{
@@ -505,16 +509,17 @@ int main(){
 			}
 			break;
 		}
+		
 		//換人
 		if(player[i].money<=0){
-			player[i].bankrupt=1;
+			player[i].bankrupt = 1;
 			player[i].money = 0;
 			for(m=0; m<24; m++){
 				if(player[i].printOnMap[m] != ' '){
 					player[i].printOnMap[m] = ' ';
 				}
 			}
-			for(m=0;m<24;m++){
+			for(m=0; m<24; m++){
 				if(map[m].owner==player[i].realty){
 					map[m].owner = 0;
 					map[m].own = 0;
