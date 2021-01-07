@@ -343,7 +343,13 @@ int main(){
 			i++;
 			continue;
 		}
-		
+		bankruptSituation = 0;
+		for(m=0; m<4; m++){
+			bankruptSituation = bankruptSituation+player[m].bankrupt;
+		}
+		if(bankruptSituation==3){
+			////計算贏家
+		}
 		if(i==4){
 			printf("是否繼續(Y/y for leave)？");
 			scanf("%c%*c",&respond);
