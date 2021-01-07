@@ -343,7 +343,7 @@ int main(){
 			i++;
 			continue;
 		}
-		bankruptSituation = 0;
+		int bankruptSituation = 0;
 		for(m=0; m<4; m++){
 			bankruptSituation = bankruptSituation+player[m].bankrupt;
 		}
