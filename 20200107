@@ -340,8 +340,8 @@ int main(){
 		
 		if(i==4){
 			printf("是否繼續(Y/y for leave)？");
-			scanf("%c",&respond);
-			printf("ans=%c  %d\n",respond,respond);
+			scanf("%c%*c",&respond);
+			//printf("ans=%c  %d\n",respond,respond);
 			printf("\n");
 			if(isalpha(respond) && (respond=='Y' || respond=='y')){
 				//計算贏家
@@ -445,8 +445,8 @@ int main(){
 			if(map[place].owner != player[i].realty){//不是自己的地 
 				if(map[place].owner == 0){//無主之地
 					printf("\n要不要在這裡買房子？");
-					scanf("%c",&ans);
-					printf("ans=%c  %d\n",ans,ans);
+					scanf("%c%*c",&ans);
+					//printf("ans=%c  %d\n",ans,ans);
 					printf("\n");
 					if((ans=='Y' || ans=='y') && (player[i].money>map[place].price)){
 						map[place].own = 1;
@@ -463,17 +463,19 @@ int main(){
 				}
 				else{
 				//扣過路費
-					printf("這裡是PLAYER%d的家，請付過路費%d\n",map[place].owner,map[place].tolls);
+					printf("這裡是PLAYER %d的家，請付過路費 %d\n",map[place].owner,map[place].tolls);
 					player[i].money = player[i].money-map[place].tolls;
 					num = map[place].owner;
-					player[num].money = player[num].money+map[place].tolls;
+					player[num-1].money = player[num-1].money+map[place].tolls;
+					map_print(map,player);
+					printf("\n");
 				}
 			}
 			else{
 				printf("\n歡迎回家\n");
 				if(map[place].level!=3){
 					printf("要不要升級？");
-					scanf("%c",&ans);
+					scanf("%c%*c",&ans);
 					printf("\n");
 					if((ans=='Y' || ans=='y') && player[i].money>(map[place].price*2)){
 						player[i].money = player[i].money-map[place].price*2;
@@ -494,7 +496,7 @@ int main(){
 		//換人
 		if(player[i].money<=0){
 			player[i].bankrupt=1;
-			printf("PLAYER%d 已經破產\n",i);
+			printf("PLAYER %d 已經破產\n",i);
 		}
 		i++;
 		printf("\n");
