@@ -37,8 +37,10 @@ void end();
 //骰子
 int dice()	 
 {
-	printf("請骰骰子\n");
+	printf("\n請骰骰子\n");
+	puts("");
 	system("pause");
+	puts("");
 	srand(time(NULL)); //產生亂數，參數以目前的時間傳入
 	int die = 1 + rand() % 6;//有六個數，從一開始(1~6)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7 | FOREGROUND_INTENSITY);
