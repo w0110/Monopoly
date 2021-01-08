@@ -460,7 +460,6 @@ int main(){
 				player[i].move = 1; //限制行動 
 				break;
 			default://其他正常地點
-				
 				if(map[place].owner != player[i].realty){  //不是自己的地 
 					if(map[place].owner == 0){  //無主之地
 						printf("\n要不要在這裡買房子？");
@@ -490,13 +489,13 @@ int main(){
 						printf("\n");
 					}
 				}
-				else{
+				else{   //是自己的地
 					printf("\n歡迎回家\n");
 					if(map[place].level!=3){
 						printf("要不要升級？");
 						scanf("%c%*c",&ans);
 						printf("\n");
-						if((ans=='Y' || ans=='y') && player[i].money>(map[place].price*2)){
+						if((ans=='Y' || ans=='y') && player[i].money>(map[place].price*2)){  //確定要升級
 							player[i].money = player[i].money-map[place].price*2;
 							map[place].level++;
 							map[place].price = map[place].price*2;
@@ -513,7 +512,7 @@ int main(){
 			break;
 		}
 		
-		//換人
+		//檢查破產狀態
 		if(player[i].money<=0){
 			player[i].bankrupt = 1;
 			player[i].money = 0;
@@ -533,6 +532,7 @@ int main(){
 			}
 			printf("PLAYER %d 已經破產\n",i+1);
 		}
+		//換人
 		i++;
 		printf("\n");
 	}
