@@ -451,7 +451,7 @@ int main(){
 			default://其他正常地點
 				if(map[place].owner != player[i].realty){  //不是自己的地 
 					if(map[place].owner == 0){  //無主之地
-						printf("\n要不要在這裡買房子？(Y/y for upgate)");
+						printf("\n要不要在這裡買房子？(Y/y for buy) ");
 						scanf("%c%*c", &ans);
 						//printf("ans=%c  %d\n",ans,ans);
 						printf("\n");
@@ -481,7 +481,7 @@ int main(){
 				else{   //是自己的地
 					printf("\n歡迎回家\n");
 					if(map[place].level!=3){
-						printf("要不要升級？(Y/y for upgate)");
+						printf("要不要升級？(Y/y for upgate) ");
 						scanf("%c%*c", &ans);
 						printf("\n");
 						if(ans=='Y' || ans=='y'){  //確定要升級 && player[i].money>(map[place].price*2)
