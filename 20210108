@@ -30,7 +30,7 @@ int dice();
 void map_print(struct map_initialise map[], struct player_initialise player[]);
 struct player_initialise chance(struct player_initialise player[],int i);
 struct player_initialise fate(struct player_initialise player[],int i);
-int countWinner(struct map_initialise map[], struct player_initialise player[]);
+void countWinner(struct map_initialise map[], struct player_initialise player[]);
 
 //骰子
 int dice()	 
