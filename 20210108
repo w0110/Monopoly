@@ -305,7 +305,7 @@ void countWinner(struct map_initialise map[], struct player_initialise player[])
 			max = sum[k];
 		}
 	}
-	for(k=1;k<4;k++){
+	for(k=0;k<4;k++){
 		if(sum[k]==max){
 			printf("PLAYER %d WIN!\n",k+1);
 		}
